@@ -17,6 +17,8 @@ public:
 // Methods
     void Afficher();
 
+    void deleteTrajet();
+
     char* getDepart();
 
     char* getArrivee();

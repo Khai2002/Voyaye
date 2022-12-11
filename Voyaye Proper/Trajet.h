@@ -4,6 +4,7 @@
 #define TRAJET_H
 
 #include <iostream>
+#include <cstring>
 using namespace std;
 
 // Interfaces utilisées
