@@ -83,9 +83,18 @@ using namespace std;
     }
 
 // Constructor
-    Catalogue::Catalogue(){}
+    Catalogue::Catalogue(){
+    #ifdef MAP
+        cout << "Appel au constructeur de <Catalogue>" << endl;
+    #endif        
+    }
+
 
     Catalogue::~Catalogue(){
-        cout << "Destroying catalog" << endl;
-        catalog.ListeChainee::~ListeChainee();
+    #ifdef MAP
+        cout << "Appel au destructeur de <Catalogue>" << endl;
+    #endif
+        // cout << "Destroying catalog" << endl;
+        // catalog.ListeChainee::~ListeChainee();
+        // cout << "catalog destroyed" << endl;
     } 

@@ -85,15 +85,68 @@ using namespace std;
     }
 
 // Constructor
-    ListeChainee::ListeChainee(){}
+    ListeChainee::ListeChainee()
+    {
+    #ifdef MAP
+        cout << "Appel au constructeur de <ListeChainee>" << endl;
+    #endif
+    }
 
     ListeChainee::ListeChainee(Cell* head_param)
     : head(head_param)
-    {}
+    {
+
+    }
 
     ListeChainee::~ListeChainee(){
-        delete tmpCell;
+    #ifdef MAP
+        cout << "Appel au destructeur de <ListeChainee>" << endl;
+    #endif
+
+        //cout << "Destroying list" << endl;
+        // int len = ListeChainee::findLength();
+        
+
+/* 
+        if (head != nullptr) {
+            cout << "head != nullptr" << endl;
+            if (head->next == nullptr) {
+                delete head;
+                cout << "delete only one" << endl;
+            } else {
+                Cell * last = head;
+                Cell * curr = head->next;
+                if (curr == nullptr) {
+                    cout << "delete head" << endl;
+                    delete head;
+                }
+                while (curr != nullptr) {
+                    cout << "in while loop" << endl;
+                    if (curr->next != nullptr) {
+                        delete last;
+                        last = curr;
+                        curr = curr->next;
+                    } else {
+                        cout << "end reached" << endl;
+                        delete last;
+                        delete curr;
+                        break;
+                    }
+
+                }
+
+            }
+
+        }
+         */
+
         delete tmpTrajet;
+        delete tmpCell;
+        
+        
+/*         head->next->deleteTrajet();
+        delete head->next;
+        head->deleteTrajet(); */
         delete head;
-        cout << "Destroying list" << endl;
+        // cout << "List destroyed" << endl;
     }

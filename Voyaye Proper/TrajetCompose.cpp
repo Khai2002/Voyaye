@@ -19,14 +19,22 @@ using namespace std;
     
 
 // Constructors / Destructors
-    TrajetCompose::TrajetCompose(){}
+    TrajetCompose::TrajetCompose()
+    {
+    #ifdef MAP
+        cout << "Appel au constructeur de <TrajetCompose>" << endl;
+    #endif        
+    }
 
     TrajetCompose::TrajetCompose(char* depart_param, char* arrivee_param)
     : Trajet(depart_param, arrivee_param)
     {}
 
     TrajetCompose::~TrajetCompose(){
-        this->Trajet::~Trajet();
-        cout << "Destroying Compose" << endl;
-        //delete arrivee;
+    #ifdef MAP
+        cout << "Appel au destructeur de <TrajetCompose>" << endl;
+    #endif
+        // this->Trajet::~Trajet();
+        // cout << "Destroying Compose" << endl;
+        // delete[] arrivee;
     } 

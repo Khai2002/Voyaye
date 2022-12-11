@@ -22,7 +22,7 @@ public:
 
     void PopCell();
 
-    Cell * getHead();;
+    Cell * getHead();
 
     void AddTrajetSimple(char* depart_param, char* arrivee_param, char* mode_param);
 
